@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>User guide · LocatorLens</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="../">LocatorLens</a>
+      <nav>
+        <a href="./">Guide</a>
+        <a href="../privacy/">Privacy</a>
+      </nav>
+    </header>
+    <main>
+      <h1>User guide</h1>
+      <p>
+        Open DevTools on the page you are testing → <strong>Elements</strong> →
+        <strong>LocatorLens</strong>. The first-run walkthrough is also under <strong>?</strong> in
+        the pane.
+      </p>
+
+      <h2>Select an element</h2>
+      <p>
+        Click a node in Elements, or inspect with Ctrl+Shift+C (⌘+Shift+C on macOS). LocatorLens
+        ranks locators for that one element.
+      </p>
+
+      <h2>Pick from page</h2>
+      <p>
+        On the Locators tab, turn on <strong>Pick from page</strong>, then move the mouse over the
+        web page (not this pane). The list follows the cursor. Ordinary clicks still use the page.
+        Hold <strong>Space</strong> and click to pin an element without activating it. Esc unpins.
+      </p>
+
+      <h2>Menus, dropdowns, and account popups</h2>
+      <ol>
+        <li>Turn <strong>Pick from page</strong> on.</li>
+        <li>Click the control that opens the menu (do not hold Space).</li>
+        <li>
+          Hover items inside the open menu. Hold <strong>Space</strong> and click to pin an item.
+          The menu stays open; click a locator row later if you need it selected in Elements.
+        </li>
+      </ol>
+      <p>
+        This also works when the menu is a widget iframe, such as Gmail’s account card. Hover
+        <em>inside</em> the open card, not only the avatar. If the list stays on the opener, press
+        Esc, then move onto the card.
+      </p>
+
+      <h2>Copy and verify</h2>
+      <p>
+        <strong>Copy</strong> takes the raw locator. <strong>As</strong> copies a snippet (Python,
+        Playwright, Java, JavaScript, C#, Cypress). Playwright prefers getByRole, getByLabel, and
+        getByTestId when those rows are Best. <strong>Verify</strong> checks a locator you type.
+      </p>
+
+      <h2>Library</h2>
+      <p>
+        <strong>This page</strong> lists saved locators that still match the document you are on.
+        <strong>All saved</strong> keeps every locator, including other sites.
+        <strong>Filter</strong> matches name, locator, project, or page as you type. Wrap a pattern
+        in <code>/slashes/</code> for a regular expression (<code>/privacy/i</code>,
+        <code>/^logout/</code>); invalid patterns fall back to ordinary text.
+      </p>
+      <p>
+        <strong>Save this page</strong> expands collapsed nav sections and briefly opens
+        account/help popups so items created on click are stored, then restores the page. Each
+        control gets one unique test id, role, id, label, or name locator. You can still export
+        after the trial or a subscription ends.
+      </p>
+
+      <h2>Settings</h2>
+      <p>
+        <strong>Theme</strong> is Light, Auto, or Dark. Auto follows DevTools (then the OS).
+        <strong>Copy as</strong> sets the default language for As and Shift+Enter. The attribute
+        list is the test-ID attributes your app uses, highest first.
+      </p>
+
+      <h2>Feedback</h2>
+      <p>Account → Send feedback. Nothing about the page under test is attached.</p>
+    </main>
+    <footer><a href="../">Back to LocatorLens</a></footer>
+  </body>
+</html>
